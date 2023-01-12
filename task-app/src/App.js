@@ -1,30 +1,16 @@
-import './App.css';
-import React, { useState, useEffect } from 'react';
-import uniqid from "uniqid";
+import styles from './App.module.css'
+import React, { useState } from 'react';
 import { Overview } from './components/Overview';
+import { InputForm } from './components/InputForm';
 
 
 function App() {
-  const [tasks, setTask] = useState([])
-  const handleSubmit= (e) => {
-    e.preventDefault()
-    setTask(tasks.concat(
-      {
-        text:document.querySelector('#taskInput').value,
-        id:uniqid()
-      }))
-  }
+  const [tasks, setTasks] = useState([])
 
   return (
-  <div className='App'>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="taskInput">Enter task</label>
-      <input type="text" id="taskInput"/>
-      <button type="submit">
-        Add Task
-      </button>
-    </form>
-    <Overview tasks={tasks}/>
+  <div className={styles.container}>
+    <InputForm tasks={tasks} setTasks={setTasks}/>
+    <Overview tasks={tasks} setTasks={setTasks}/>
   </div>
   );
 }

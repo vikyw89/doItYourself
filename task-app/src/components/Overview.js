@@ -1,16 +1,18 @@
+import styles from './Overview.module.css';
+import React from 'react';
+import { TaskCard } from './TaskCard';
+
 const Overview = (props) => {
-    const { tasks } = props;
-    console.log({tasks})
-  
-    return (
-      <>
-      <ul className="Overview">
-        {tasks.map((task) => {
-          return <li key={task.id}>{task.text}</li>;
+  const { tasks } = props;
+  return (
+    <div className={styles.container}>
+      <ul>
+        {tasks.map((task, index) => {
+          return <TaskCard key={task.id} index={index} task={task} {...props}/>
         })}
       </ul>
-      </>
-    );
+    </div>
+  );
 };
 
 export { Overview }

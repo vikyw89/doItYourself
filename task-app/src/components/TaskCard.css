@@ -1,0 +1,22 @@
+.TaskCard {
+    border: 1px solid white;
+    padding: 10px;
+    position: relative;
+    list-style-type: none;
+}
+
+.TaskCard > .iconDelete {
+    top:5px;
+    right: 5px;
+    position: absolute;
+}
+
+.TaskCard > .iconEdit {
+    top:5px;
+    right: 30px;
+    position: absolute;
+}
+
+.TaskCard > input:focus {
+    outline: none;
+}
