@@ -6,11 +6,11 @@ const InputForm = (props) => {
     const { tasks, setTasks } = props
 
     // effects
-    // useEffect(()=>{
-    //   setTimeout(()=>{
-    //     document.querySelector(`.${styles.container} > input`).focus()
-    //   },0)
-    // },[tasks])
+    useEffect(()=>{
+      setTimeout(()=>{
+        document.querySelector(`.${styles.container} > input`).focus()
+      },0)
+    },[tasks])
   
     // events
     const handleSubmit= (e) => {
