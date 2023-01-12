@@ -8,19 +8,19 @@ const InputForm = (props) => {
     // effects
     useEffect(()=>{
       setTimeout(()=>{
-        document.querySelector(`.${styles.container} > input`).focus()
-      },0)
-    },[tasks])
+        document.querySelector(`.${CSS.escape(styles.container)} > input`).focus()
+      })
+    },[])
   
     // events
     const handleSubmit= (e) => {
       e.preventDefault()
       setTasks(tasks.concat(
         {
-          text:document.querySelector(`.${styles.container} > input`).value,
+          text:document.querySelector(`.${CSS.escape(styles.container)} > input`).value,
           id:uniqid()
         }))
-        document.querySelector(`.${styles.container} > input`).value = ''
+        document.querySelector(`.${CSS.escape(styles.container)} > input`).value = ''
     }
   
     return (
